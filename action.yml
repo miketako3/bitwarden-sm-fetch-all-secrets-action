@@ -1,0 +1,12 @@
+name: 'Fetch All Bitwarden Secrets'
+description: 'Fetch all secrets accessible by the Bitwarden service account and export as environment variables'
+inputs:
+  access_token:
+    description: 'Bitwarden Secrets Manager Access Token'
+    required: true
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.access_token }}
